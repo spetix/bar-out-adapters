@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/spetix/bar-out-adapters/pkg/barout"
+	"github.com/spetix/bar-out-adapters/pkg/barout/data"
 )
 
 type WaybarOut struct {
@@ -19,7 +19,7 @@ type outputjsonWaybar struct {
 	ForegroundColor string `json:"foreground-color"`
 }
 
-func NewWaybarOut(device *os.File) barout.BlockletOutput {
+func NewWaybarOut(device *os.File) *WaybarOut {
 	return &WaybarOut{
 		baseOutput: baseOutput{
 			Device: device,
@@ -27,7 +27,7 @@ func NewWaybarOut(device *os.File) barout.BlockletOutput {
 	}
 }
 
-func (j *WaybarOut) Print(d barout.Data) {
+func (j *WaybarOut) Print(d data.Data) {
 	newJson := outputjsonWaybar{
 		Alt:             d.Label(),
 		Text:            d.Short(), //dateutil.Format(unit, rerenderOptions.Unit),

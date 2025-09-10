@@ -4,14 +4,11 @@ import (
 	"os"
 
 	"github.com/spetix/bar-out-adapters/internal/protocols"
+	"github.com/spetix/bar-out-adapters/pkg/barout/data"
 )
 
-type baseOutput struct {
-	Device *os.File
-}
-
 type BlockletOutput interface {
-	Print(d Data)
+	Print(d data.Data)
 }
 
 func New(protocol string) BlockletOutput {
