@@ -7,31 +7,31 @@ setup:
 	go mod download
 	go mod tidy
 
-bin/$(PROJECT_NAME)-linux-amd64: 
+lib/$(PROJECT_NAME)-linux-amd64: 
 	@echo "Building linux-amd64"
 	@mkdir -p bin
-	@GOOS=linux GOARCH=amd64 go build -v -o bin/$(PROJECT_NAME)-linux-amd64 -a ./pkg/barout/blocketOutputInterface.go
+	@GOOS=linux GOARCH=amd64 go build -v -o lib/$(PROJECT_NAME)-linux-amd64 -a ./pkg/barout/blocketOutputInterface.go
 
 
 
-bin/$(PROJECT_NAME)-linux-arm64:
+lib/$(PROJECT_NAME)-linux-arm64:
 	@echo "Building linux-arm64"
 	mkdir -p bin
-	GOOS=linux GOARCH=arm64 go build -v -o bin/$(PROJECT_NAME)-linux-arm64 -a ./pkg/barout/blocketOutputInterface.go
+	GOOS=linux GOARCH=arm64 go build -v -o lib/$(PROJECT_NAME)-linux-arm64 -a ./pkg/barout/blocketOutputInterface.go
 
 
 
 # Define the build-all target
 .PHONY: build
 build: setup
-	$(MAKE) bin/$(PROJECT_NAME)-linux-amd64
-	$(MAKE) bin/$(PROJECT_NAME)-linux-arm64
+	$(MAKE) lib/$(PROJECT_NAME)-linux-amd64
+	$(MAKE) lib/$(PROJECT_NAME)-linux-arm64
 
 
 # TODO clean binaries
 clean:
 	go clean ./pkg/...
-	rm -Rf bin
+	rm -Rf lib
 	rm -f test-result*.json
 	rm -f coverage.*
 
