@@ -1,4 +1,5 @@
 ARGS?=
+PROJECT_NAME?=bar-out-adapters
 
 setup:
 	go install github.com/boumenot/gocover-cobertura@latest || exit 0
@@ -6,40 +7,30 @@ setup:
 	go mod download
 	go mod tidy
 
-bin/days2xmaslet-linux-amd64: 
+bin/$(PROJECT_NAME)-linux-amd64: 
 	@echo "Building linux-amd64"
 	@mkdir -p bin
-	@GOOS=linux GOARCH=amd64 go build -v -o bin/days2xmaslet-linux-amd64 ./cmd/...
+	@GOOS=linux GOARCH=amd64 go build -v -o bin/$(PROJECT_NAME)-linux-amd64 -a ./pkg/barout/blocketOutputInterface.go
 
-# bin/days2xmaslet-darwin-amd64:
-# 	@echo "Building darwin-amd64"
-# 	mkdir -p bin
-# 	GOOS=darwin GOARCH=amd64 go build -v -o bin/days2xmaslet-darwin-amd64 ./cmd/...
 
-# bin/days2xmaslet-windows-amd64.exe:
-# 	@echo "Building windows-amd64"
-# 	mkdir -p bin/windows-amd64
-# 	GOOS=windows GOARCH=amd64 go build -v -o bin/days2xmaslet-windows-amd64.exe ./cmd/...
 
-bin/days2xmaslet-linux-arm64:
+bin/$(PROJECT_NAME)-linux-arm64:
 	@echo "Building linux-arm64"
 	mkdir -p bin
-	GOOS=linux GOARCH=arm64 go build -v -o bin/days2xmaslet-linux-arm64 ./cmd/...
+	GOOS=linux GOARCH=arm64 go build -v -o bin/$(PROJECT_NAME)-linux-arm64 -a ./pkg/barout/blocketOutputInterface.go
 
 
 
 # Define the build-all target
 .PHONY: build
 build: setup
-	$(MAKE) bin/days2xmaslet-linux-amd64
-	# $(MAKE) bin/days2xmaslet-darwin-amd64
-	# $(MAKE) bin/days2xmaslet-windows-amd64.exe
-	$(MAKE) bin/days2xmaslet-linux-arm64
+	$(MAKE) bin/$(PROJECT_NAME)-linux-amd64
+	$(MAKE) bin/$(PROJECT_NAME)-linux-arm64
 
 
 # TODO clean binaries
 clean:
-	go clean ./cmd/...
+	go clean ./pkg/...
 	rm -Rf bin
 	rm -f test-result*.json
 	rm -f coverage.*
