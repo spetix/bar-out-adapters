@@ -28,7 +28,7 @@ jobs:
     - name: Save build binaries
       uses: actions/upload-artifact@v4
       with:
-        name: go-out-adapters
+        name: bar-out-adapters
         path: lib
     - name: Test
       run: make test
