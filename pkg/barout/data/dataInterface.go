@@ -1,4 +1,4 @@
-package barout
+package data
 
 type Data interface {
 	Short() string

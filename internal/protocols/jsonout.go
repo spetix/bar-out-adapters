@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/spetix/bar-out-adapters/pkg/barout"
+	"github.com/spetix/bar-out-adapters/pkg/barout/data"
 )
 
 type JsonOut struct {
@@ -19,7 +19,7 @@ type outputjson struct {
 	ForegroundColor string `json:"foreground-color"`
 }
 
-func NewJsonOut(device *os.File) barout.BlockletOutput {
+func NewJsonOut(device *os.File) *JsonOut {
 	return &JsonOut{
 		baseOutput: baseOutput{
 			Device: device,
@@ -27,7 +27,7 @@ func NewJsonOut(device *os.File) barout.BlockletOutput {
 	}
 }
 
-func (j *JsonOut) Print(d barout.Data) {
+func (j *JsonOut) Print(d data.Data) {
 	newJson := outputjson{
 		Label:           d.Label(),
 		Short:           d.Short(),

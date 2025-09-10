@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/spetix/bar-out-adapters/pkg/barout"
+	"github.com/spetix/bar-out-adapters/pkg/barout/data"
 )
 
 type RawOut struct {
@@ -19,7 +19,7 @@ func NewRawOut(device *os.File) *RawOut {
 	}
 }
 
-func (r *RawOut) Print(d barout.Data) {
+func (r *RawOut) Print(d data.Data) {
 
 	writer := io.Writer(r.Device)
 	//defer io.WriteCloser(r.Device).Close()
