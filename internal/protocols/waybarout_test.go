@@ -1,32 +1,56 @@
 package protocols
 
-// import (
-// 	"os"
-// 	"time"
+import (
+	"io"
+	"os"
+	"testing"
+)
 
-// 	// "github.com/spetix/days2xmasleft/internal/data/event"
-// 	// "github.com/spetix/days2xmasleft/internal/data/render"
-// 	// "github.com/spetix/days2xmasleft/internal/dateutil"
-// )
+type testData struct {
+	name       string
+	details    string
+	background string
+	foreground string
+}
 
-// func ExampleWaybarOut_Print_ok() {
-// 	out := NewWaybarOut(os.Stdout)
-// 	desiredDate := time.Now().Add(11 * dateutil.Day).Format("01-02")
-// 	d := event.New("xmas", desiredDate, &render.RenderOptions{Label: "test", Format: "text", Unit: dateutil.Day}, time.Now)
+func (d *testData) Short() string {
+	return d.name
+}
 
-// 	out.Print(d)
-// 	// Output:
-// 	// {"text":"10","tooltip":"10 to xmas","alt":"test","background-color":"","foreground-color":""}
-// }
+func (d *testData) Long() string {
+	return d.details
+}
 
-// func ExampleRawOut_Print_ok_withColor() {
-// 	out := NewRawOut(os.Stdout)
-// 	daysToXmas := time.Duration(10 * dateutil.Day)
-// 	out.Print(daysToXmas, &RenderOptions{Label: "test", Format: "text", Unit: dateutil.Day, BackgroundColor: "#ff0000", ForegroundColor: "#00ff00"})
-// 	// Output:
-// 	// test10
-// 	// test10
-// 	// #00ff00
-// 	// #ff0000
+func (d *testData) BackgroundColor() string {
+	return d.background
+}
 
-// }
+func (d *testData) ForegroundColor() string {
+	return d.foreground
+}
+
+func (d *testData) Label() string {
+	return d.name
+}
+
+func TestWaybarOutPrint(t *testing.T) {
+	r, w, err := os.Pipe()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer r.Close()
+
+	out := NewWaybarOut(w)
+	out.Print(&testData{"name", "details", "background", "foreground"})
+	w.Close()
+
+	got, err := io.ReadAll(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	want := `{"text":"name","tooltip":"details","alt":"name","background-color":"background","foreground-color":"foreground"}`
+	if string(got) != want {
+		t.Fatalf("unexpected output: got %q want %q", string(got), want)
+	}
+}

@@ -1,9 +1,8 @@
 package barout
 
 import (
-	"os"
+	"fmt"
 
-	"github.com/spetix/bar-out-adapters/internal/protocols"
 	"github.com/spetix/bar-out-adapters/pkg/barout/data"
 )
 
@@ -17,43 +16,33 @@ type BlockletOutput interface {
 type BlockletProtocol string
 
 const (
-	Raw      BlockletProtocol = "raw"
-	I3Blocks BlockletProtocol = "i3blocks"
-	Waybar   BlockletProtocol = "waybar"
-	Json     BlockletProtocol = "json"
+	ProtocolRaw      BlockletProtocol = "raw"
+	ProtocolI3Blocks BlockletProtocol = "i3blocks"
+	ProtocolWaybar   BlockletProtocol = "waybar"
+	ProtocolJson     BlockletProtocol = "json"
 )
 
 func (p BlockletProtocol) String() string {
 	return string(p)
 }
 
-func ParseProtocol(protoStr string) BlockletProtocol {
-	switch protoStr {
-	case "raw":
-		return Raw
-	case "i3blocks":
-		return I3Blocks
-	case "waybar":
-		return Waybar
-	case "json":
-		return Json
-	default:
-		return Raw
-	}
+func (p BlockletProtocol) Type() string {
+	return "BlockletProtocol"
 }
 
-// New creates a new BlockletOutput based on the provided protocol string.
-// It supports "json", "raw", and "waybar" protocols. If an unsupported protocol is provided, it defaults to "raw".
-func New(protocol BlockletProtocol) BlockletOutput {
-
-	switch protocol {
-	case Raw, I3Blocks:
-		return protocols.NewRawOut(os.Stdout)
-	case Waybar:
-		return protocols.NewWaybarOut(os.Stdout)
-	case Json:
-		return protocols.NewJsonOut(os.Stdout)
+func (p *BlockletProtocol) Set(protoStr string) error {
+	switch protoStr {
+	case "raw":
+		*p = ProtocolRaw
+	case "i3blocks":
+		*p = ProtocolI3Blocks
+	case "waybar":
+		*p = ProtocolWaybar
+	case "json":
+		*p = ProtocolJson
 	default:
-		return protocols.NewRawOut(os.Stdout)
+		*p = ProtocolRaw
+		return fmt.Errorf("Invalid protocol %s", protoStr)
 	}
+	return nil
 }
