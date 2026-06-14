@@ -1,0 +1,23 @@
+{
+    "name": "Golang DevContainer with Podman and Wayland",
+    "dockerFile": "Dockerfile", // Or your preferred image
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+        "source=/run/user/1000/wayland-1,target=/run/user/1000/wayland-1,type=bind"
+    ],
+    "containerEnv": {
+        "PODMAN_ROOTLESS": "true",
+        "WAYLAND_DISPLAY": "wayland-1"
+    },
+    "remoteUser": "vscode",
+    "runArgs": ["--userns=keep-id"],
+    "features": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go"
+            ]
+        }
+    },
+    "postCreateCommand": ""
+}
