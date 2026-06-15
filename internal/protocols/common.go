@@ -1,17 +1,6 @@
-package barout
+package protocols
 
-import (
-	"fmt"
-
-	"github.com/spetix/bar-out-adapters/pkg/barout/data"
-)
-
-// BlockletOutput is the interface that wraps the Print method. It is used to output data in different formats.
-// An implementation of this interface is provided for each supported protocol.
-
-type BlockletOutput interface {
-	Print(d data.Data)
-}
+import "fmt"
 
 type BlockletProtocol string
 

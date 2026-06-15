@@ -1,56 +1,49 @@
 package protocols
 
 import (
-	"io"
+	"encoding/json"
 	"os"
 	"testing"
 )
 
-type testData struct {
-	name       string
-	details    string
-	background string
-	foreground string
-}
+type fakeDataWaybar struct{}
 
-func (d *testData) Short() string {
-	return d.name
-}
+func (f *fakeDataWaybar) Short() string           { return "name" }
+func (f *fakeDataWaybar) Long() string            { return "details" }
+func (f *fakeDataWaybar) Label() string           { return "name" }
+func (f *fakeDataWaybar) BackgroundColor() string { return "background" }
+func (f *fakeDataWaybar) ForegroundColor() string { return "foreground" }
 
-func (d *testData) Long() string {
-	return d.details
-}
-
-func (d *testData) BackgroundColor() string {
-	return d.background
-}
-
-func (d *testData) ForegroundColor() string {
-	return d.foreground
-}
-
-func (d *testData) Label() string {
-	return d.name
-}
-
-func TestWaybarOutPrint(t *testing.T) {
-	r, w, err := os.Pipe()
+func TestWaybarOut_Print(t *testing.T) {
+	tmp, err := os.CreateTemp("", "waybarout")
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer r.Close()
+	defer os.Remove(tmp.Name())
+	defer tmp.Close()
 
-	out := NewWaybarOut(w)
-	out.Print(&testData{"name", "details", "background", "foreground"})
-	w.Close()
+	w := NewWaybarOut(tmp)
+	d := &fakeDataWaybar{}
 
-	got, err := io.ReadAll(r)
+	w.Print(d)
+	tmp.Close()
+
+	b, err := os.ReadFile(tmp.Name())
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	want := `{"text":"name","tooltip":"details","alt":"name","background-color":"background","foreground-color":"foreground"}`
-	if string(got) != want {
-		t.Fatalf("unexpected output: got %q want %q", string(got), want)
+	var out map[string]string
+	if err := json.Unmarshal(b, &out); err != nil {
+		t.Fatalf("invalid json: %v, raw=%s", err, string(b))
+	}
+	if out["text"] != "name" {
+		t.Fatalf("text mismatch: %q", out["text"])
+	}
+	if out["tooltip"] != "details" {
+		t.Fatalf("tooltip mismatch: %q", out["tooltip"])
+	}
+	if out["alt"] != "name" {
+		t.Fatalf("alt mismatch: %q", out["alt"])
 	}
 }

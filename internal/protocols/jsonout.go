@@ -12,9 +12,9 @@ type JsonOut struct {
 	baseOutput
 }
 type outputjson struct {
-	Short           string `json:"short"`
-	Long            string `json:"long"`
-	Label           string `json:"label"`
+	Text            string `json:"text"`
+	Tooltip         string `json:"tooltip"`
+	Alt             string `json:"alt"`
 	BackgroundColor string `json:"background-color"`
 	ForegroundColor string `json:"foreground-color"`
 }
@@ -29,9 +29,9 @@ func NewJsonOut(device *os.File) *JsonOut {
 
 func (j *JsonOut) Print(d data.Data) {
 	newJson := outputjson{
-		Label:           d.Label(),
-		Short:           d.Short(),
-		Long:            d.Long(),
+		Text:            d.Short(),
+		Tooltip:         d.Long(),
+		Alt:             d.Label(),
 		BackgroundColor: d.BackgroundColor(),
 		ForegroundColor: d.ForegroundColor(),
 	}
