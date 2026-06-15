@@ -23,6 +23,8 @@ jobs:
         go-version-file: go.mod 
     - name: Get dependencies
       run: make setup
+    - name: Generate mocks
+      run: make mockery
     - name: Build All
       run: make build
     - name: Save build binaries

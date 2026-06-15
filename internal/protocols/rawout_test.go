@@ -1,32 +1,52 @@
 package protocols
 
-// import (
-// 	"os"
-// 	// "time"
+import (
+	"os"
+	"strings"
+	"testing"
+)
 
-// 	// event "github.com/spetix/days2xmasleft/internal/data/event"
-// 	// render "github.com/spetix/days2xmasleft/internal/data/render"
-// 	// "github.com/spetix/days2xmasleft/internal/dateutil"
-// )
+type fakeDataRaw struct{}
 
-// func ExampleRawOut_Print_ok() {
-// 	out := NewRawOut(os.Stdout)
-// 	desiredDate := time.Now().Add(11 * dateutil.Day).Format("01-02")
-// 	daysToXmas := event.New("xmas", desiredDate, &render.RenderOptions{Label: "test", Format: "text", Unit: dateutil.Day}, time.Now)
-// 	out.Print(daysToXmas)
-// 	// Output:
-// 	// 10
-// 	// 10 to xmas
-// }
+func (f *fakeDataRaw) Short() string           { return "name" }
+func (f *fakeDataRaw) Long() string            { return "details" }
+func (f *fakeDataRaw) Label() string           { return "name" }
+func (f *fakeDataRaw) BackgroundColor() string { return "background" }
+func (f *fakeDataRaw) ForegroundColor() string { return "foreground" }
 
-// func ExampleRawOut_Print_ok_withColor() {
-// 	out := NewRawOut(os.Stdout)
-// 	daysToXmas := time.Duration(10 * dateutil.Day)
-// 	out.Print(daysToXmas, &RenderOptions{Label: "test", Format: "text", Unit: dateutil.Day, BackgroundColor: "#ff0000", ForegroundColor: "#00ff00"})
-// 	// Output:
-// 	// test10
-// 	// test10
-// 	// #00ff00
-// 	// #ff0000
+func TestRawOut_Print(t *testing.T) {
+	tmp, err := os.CreateTemp("", "rawout")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.Remove(tmp.Name())
+	defer tmp.Close()
 
-// }
+	r := NewRawOut(tmp)
+	d := &fakeDataRaw{}
+
+	r.Print(d)
+	tmp.Close()
+
+	b, err := os.ReadFile(tmp.Name())
+	if err != nil {
+		t.Fatal(err)
+	}
+	s := string(b)
+	lines := strings.Split(strings.TrimRight(s, "\n"), "\n")
+	if len(lines) < 4 {
+		t.Fatalf("unexpected lines output: %q", s)
+	}
+	if lines[0] != "name" {
+		t.Fatalf("short mismatch: %q", lines[0])
+	}
+	if lines[1] != "details" {
+		t.Fatalf("long mismatch: %q", lines[1])
+	}
+	if lines[2] != "foreground" {
+		t.Fatalf("foreground mismatch: %q", lines[2])
+	}
+	if lines[3] != "background" {
+		t.Fatalf("background mismatch: %q", lines[3])
+	}
+}

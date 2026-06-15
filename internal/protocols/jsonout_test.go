@@ -1,22 +1,51 @@
 package protocols
 
-// func ExampleJsonOut_Print_ok() {
-// 	out := NewJsonOut(os.Stdout)
-// 	desiredDate := time.Now().Add(11 * dateutil.Day).Format("01-02")
-// 	e := event.New("xmas", desiredDate, &render.RenderOptions{Label: "test", Format: "text", Unit: dateutil.Day}, time.Now)
-// 	out.Print(e)
-// 	// Output:
-// 	// {"short":"10","long":"10 to xmas","label":"test","background-color":"","foreground-color":""}
-// }
+import (
+	"encoding/json"
+	"os"
+	"testing"
+)
 
-// func ExampleRawOut_Print_ok_withColor() {
-// 	out := NewRawOut(os.Stdout)
-// 	daysToXmas := time.Duration(10 * dateutil.Day)
-// 	out.Print(daysToXmas, &RenderOptions{Label: "test", Format: "text", Unit: dateutil.Day, BackgroundColor: "#ff0000", ForegroundColor: "#00ff00"})
-// 	// Output:
-// 	// test10
-// 	// test10
-// 	// #00ff00
-// 	// #ff0000
+type fakeData struct{}
 
-// }
+func (f *fakeData) Short() string           { return "name" }
+func (f *fakeData) Long() string            { return "details" }
+func (f *fakeData) Label() string           { return "name" }
+func (f *fakeData) BackgroundColor() string { return "background" }
+func (f *fakeData) ForegroundColor() string { return "foreground" }
+
+func TestJsonOut_Print(t *testing.T) {
+	tmp, err := os.CreateTemp("", "jsonout")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.Remove(tmp.Name())
+	defer tmp.Close()
+
+	j := NewJsonOut(tmp)
+
+	m := &fakeData{}
+
+	j.Print(m)
+	tmp.Close()
+
+	b, err := os.ReadFile(tmp.Name())
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	var out map[string]string
+	if err := json.Unmarshal(b, &out); err != nil {
+		t.Fatalf("invalid json: %v, raw=%s", err, string(b))
+	}
+
+	if out["text"] != "name" {
+		t.Fatalf("text mismatch: got=%q", out["text"])
+	}
+	if out["tooltip"] != "details" {
+		t.Fatalf("tooltip mismatch: got=%q", out["tooltip"])
+	}
+	if out["alt"] != "name" {
+		t.Fatalf("alt mismatch: got=%q", out["alt"])
+	}
+}
