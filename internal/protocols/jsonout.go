@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/spetix/bar-out-adapters/pkg/barout/data"
+	"github.com/spetix/bar-out-adapters/pkg/barout/models"
 )
 
 type JsonOut struct {
@@ -27,7 +27,7 @@ func NewJsonOut(device *os.File) *JsonOut {
 	}
 }
 
-func (j *JsonOut) Print(d data.Data) {
+func (j *JsonOut) Print(d models.Data) {
 	newJson := outputjson{
 		Text:            d.Short(),
 		Tooltip:         d.Long(),
