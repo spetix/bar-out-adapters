@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/spetix/bar-out-adapters/pkg/barout/data"
+	"github.com/spetix/bar-out-adapters/pkg/barout/models"
 )
 
 type WaybarOut struct {
@@ -27,7 +27,7 @@ func NewWaybarOut(device *os.File) *WaybarOut {
 	}
 }
 
-func (j *WaybarOut) Print(d data.Data) {
+func (j *WaybarOut) Print(d models.Data) {
 	newJson := outputjsonWaybar{
 		Alt:             d.Label(),
 		Text:            d.Short(), //dateutil.Format(unit, rerenderOptions.Unit),

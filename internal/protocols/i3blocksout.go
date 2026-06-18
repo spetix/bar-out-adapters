@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/spetix/bar-out-adapters/pkg/barout/data"
+	"github.com/spetix/bar-out-adapters/pkg/barout/models"
 )
 
 type I3BlocksOut struct {
@@ -19,7 +19,7 @@ func NewI3BlocksOut(device *os.File) *I3BlocksOut {
 	}
 }
 
-func (i *I3BlocksOut) Print(d data.Data) {
+func (i *I3BlocksOut) Print(d models.Data) {
 
 	writer := io.Writer(i.Device)
 	//defer io.WriteCloser(r.Device).Close()

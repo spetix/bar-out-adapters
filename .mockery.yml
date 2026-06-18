@@ -4,6 +4,6 @@ filename: mock_data_mock.go
 pkgname: mocks
 template: testify
 packages:
-  github.com/spetix/bar-out-adapters/pkg/barout/data:
+  github.com/spetix/bar-out-adapters/pkg/barout/models:
     interfaces:
       Data: {}
