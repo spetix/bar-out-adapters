@@ -1,6 +1,7 @@
 package barout_test
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/spf13/cobra"
@@ -8,6 +9,16 @@ import (
 	"github.com/spetix/bar-out-adapters/internal/protocols"
 	"github.com/spetix/bar-out-adapters/pkg/barout"
 )
+
+func TestBlockletProtocolSet(t *testing.T) {
+	var proto protocols.BlockletProtocol
+	if err := proto.Set("waybar"); err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if proto != protocols.ProtocolWaybar {
+		t.Fatalf("expected protocol %q, got %q", protocols.ProtocolWaybar, proto)
+	}
+}
 
 func TestNewSetupBlocklet_DefaultOptions(t *testing.T) {
 	sb := barout.NewSetupBlocklet(nil)
@@ -30,27 +41,24 @@ func TestNewSetupBlocklet_GetOutputSelection(t *testing.T) {
 	cmd := cobra.Command{Use: "test"}
 	sb.Setup(&cmd)
 
-	cmd.PersistentFlags().Set("protocol", "json")
-	out := sb.GetOutput()
-	if _, ok := out.(*protocols.JsonOut); !ok {
-		t.Fatalf("expected JsonOut for json protocol, got %T", out)
+	tests := []struct {
+		name     string
+		protocol string
+		wantType interface{}
+	}{
+		{name: "json", protocol: "json", wantType: &protocols.JsonOut{}},
+		{name: "raw", protocol: "raw", wantType: &protocols.RawOut{}},
+		{name: "i3blocks", protocol: "i3blocks", wantType: &protocols.RawOut{}},
+		{name: "waybar", protocol: "waybar", wantType: &protocols.WaybarOut{}},
 	}
 
-	cmd.PersistentFlags().Set("protocol", "raw")
-	out = sb.GetOutput()
-	if _, ok := out.(*protocols.RawOut); !ok {
-		t.Fatalf("expected RawOut for raw protocol, got %T", out)
-	}
-
-	cmd.PersistentFlags().Set("protocol", "i3blocks")
-	out = sb.GetOutput()
-	if _, ok := out.(*protocols.RawOut); !ok {
-		t.Fatalf("expected RawOut for i3blocks protocol, got %T", out)
-	}
-
-	cmd.PersistentFlags().Set("protocol", "waybar")
-	out = sb.GetOutput()
-	if _, ok := out.(*protocols.WaybarOut); !ok {
-		t.Fatalf("expected WaybarOut for waybar protocol, got %T", out)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			cmd.PersistentFlags().Set("protocol", tt.protocol)
+			out := sb.GetOutput()
+			if reflect.TypeOf(out) != reflect.TypeOf(tt.wantType) {
+				t.Fatalf("expected %T for %s protocol, got %T", tt.wantType, tt.protocol, out)
+			}
+		})
 	}
 }
