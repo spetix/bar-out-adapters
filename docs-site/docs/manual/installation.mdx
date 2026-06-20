@@ -1,0 +1,32 @@
+---
+sidebar_position: 2
+---
+
+# Installation
+
+Install the library from your module root:
+
+```bash
+go get github.com/spetix/bar-out-adapters@latest
+```
+
+Then import it in your Go code:
+
+```go
+import "github.com/spetix/bar-out-adapters/pkg/barout"
+```
+
+> This repository also includes a documentation site with local build targets:
+>
+> - `make docs-site` — build the doc site
+> - `make local-site` — build the docs site with coverage included
+> - `make run-local-site` — build and serve the site locally
+
+## Supported protocols
+
+The library supports the following output protocols:
+
+- `raw` — plain raw text output
+- `i3blocks` — output compatible with i3bar/i3blocks format
+- `waybar` — JSON format for Waybar
+- `json` — generic JSON output

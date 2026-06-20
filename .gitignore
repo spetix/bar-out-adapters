@@ -18,6 +18,7 @@ coverage.*
 profile.cov
 
 generated/
+target/
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
@@ -38,5 +39,3 @@ lib/
 
 test-results.json
 
-# Coverage output
-target/coverage/

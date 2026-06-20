@@ -62,7 +62,7 @@ export default function Versions(): ReactNode {
                       </p>
                     </div>
                     <Link
-                      to={v.current ? '/docs/intro' : `/versions/${v.version}/docs/intro`}
+                      to={v.current ? '/docs/quickstart' : `/versions/${v.version}/docs/quickstart`}
                       className="button button--primary">
                       View Docs
                     </Link>
@@ -73,7 +73,7 @@ export default function Versions(): ReactNode {
               <div className={styles.emptyState}>
                 <p>
                   No versioned releases yet. View the{' '}
-                  <Link to="/docs/intro">current documentation</Link>.
+                  <Link to="/docs/quickstart">current documentation</Link>.
                 </p>
               </div>
             )}
@@ -85,7 +85,7 @@ export default function Versions(): ReactNode {
             </Heading>
             <p>
               The main documentation is always available at{' '}
-              <Link to="/docs/intro">this site</Link> and reflects the latest development
+              <Link to="/docs/quickstart">this site</Link> and reflects the latest development
               version.
             </p>
           </div>

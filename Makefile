@@ -46,7 +46,7 @@ test: build
 
 # TODO run tests
 test-results.json:
-	go test -race -json -v -coverprofile=coverage.txt ./... 2>&1 | tee test-results.json | gotestfmt
+	go test -race -json -v -coverprofile=coverage.txt $(shell go list ./... | grep -v '^github.com/spetix/bar-out-adapters/generated/mocks') 2>&1 | tee test-results.json | gotestfmt
 
 coverage: test
 	$(MAKE) coverage.xml

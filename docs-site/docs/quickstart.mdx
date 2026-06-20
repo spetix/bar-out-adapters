@@ -1,0 +1,91 @@
+---
+sidebar_position: 1
+---
+
+# Quickstart
+
+Get started quickly with the `bar-out-adapters` library.
+
+## 1. Install the module
+
+From your Go module root:
+
+```bash
+go get github.com/spetix/bar-out-adapters@latest
+```
+
+## 2. Import the package
+
+```go
+import "github.com/spetix/bar-out-adapters/pkg/barout"
+```
+
+## 3. Implement the `Data` interface
+
+```go
+type statusData struct{}
+
+func (s *statusData) Short() string         { return "OK" }
+func (s *statusData) Long() string          { return "All systems operational" }
+func (s *statusData) BackgroundColor() string { return "#000000" }
+func (s *statusData) ForegroundColor() string { return "#ffffff" }
+func (s *statusData) Label() string          { return "status" }
+```
+
+## 4. Create and run the blocklet
+
+```go
+package main
+
+import (
+    "github.com/spf13/cobra"
+    "github.com/spetix/bar-out-adapters/pkg/barout"
+)
+
+func main() {
+    rootCmd := &cobra.Command{Use: "status-blocklet"}
+    sb := barout.NewSetupBlocklet(nil)
+    sb.Setup(rootCmd)
+
+    rootCmd.Run = func(cmd *cobra.Command, args []string) {
+        out := sb.GetOutput()
+        out.Print(&statusData{})
+    }
+
+    rootCmd.Execute()
+}
+```
+
+## 5. Choose a protocol
+
+The blocklet supports these protocols:
+
+- `raw`
+- `i3blocks`
+- `waybar`
+- `json`
+
+Set the protocol using an environment variable or CLI flag:
+
+```bash
+protocol=waybar ./status-blocklet
+```
+
+```bash
+./status-blocklet --protocol=json
+```
+
+## 6. Configure output options
+
+Set render options with environment variables or flags:
+
+- `label` / `--label`
+- `format` / `--format`
+- `color` / `--color`
+- `bgcolor` / `--bgcolor`
+
+Example:
+
+```bash
+label=status color="#ffffff" bgcolor="#000000" ./status-blocklet --protocol=waybar
+```
