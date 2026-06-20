@@ -1,0 +1,61 @@
+.container {
+  padding: 2rem 0;
+}
+
+.intro {
+  margin-top: 2rem;
+}
+
+.versionsList {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.versionItem {
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.versionInfo {
+  flex: 1;
+}
+
+.versionTitle {
+  font-size: 1.1rem;
+}
+
+.badge {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #0088ff;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.versionDate {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.developmentSection {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+}
+
+.sectionTitle {
+  margin-top: 0;
+}
+
+.emptyState {
+  margin-top: 2rem;
+}

@@ -4,8 +4,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Bar Output Adapters',
+  tagline: 'your blocklet shown anywhere',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -45,8 +45,8 @@ const config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/spetix/bar-out-adapters/tree/main/docs/',
+          // editUrl:
+          //   'https://github.com/spetix/bar-out-adapters/tree/main/docs/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -73,6 +73,21 @@ const config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Tutorial',
+        },
+        {
+          to: '/docs/downloads',
+          label: 'Downloads',
+          position: 'left',
+        },
+        {
+          to: '/versions',
+          label: 'Versions',
+          position: 'left',
+        },
+        {
+          to: '/stats',
+          label: 'Stats',
+          position: 'left',
         },
         {
           href: 'https://github.com/spetix/bar-out-adapters',

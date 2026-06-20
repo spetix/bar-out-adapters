@@ -37,20 +37,66 @@ jobs:
           cache: npm
           cache-dependency-path: docs-site/package-lock.json
 
-      - run: npm ci
-        working-directory: docs-site
+      - run: make docs-setup
 
-      - name: Inject coverage
+      - name: Prepare docs artifacts
         run: |
-          rm -rf docs-site/static/coverage
-          mkdir -p docs-site/static/coverage
-          cp -r coverage/* docs-site/static/coverage/
+          make project-stats
+          make inject-coverage
+          make inject-test-results
 
-      - run: npm run build
-        working-directory: docs-site
+      - run: make docs-build
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Determine deployment path
+        id: deploy-path
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/develop" ]]; then
+            echo "path=./" >> $GITHUB_OUTPUT
+            echo "is_tag=false" >> $GITHUB_OUTPUT
+          else
+            VERSION=${GITHUB_REF#refs/tags/}
+            echo "path=./versions/${VERSION}/" >> $GITHUB_OUTPUT
+            echo "is_tag=true" >> $GITHUB_OUTPUT
+            echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update versions.json
+        run: |
+          python3 << 'PYTHON_EOF'
+          import json
+          from datetime import datetime
+          
+          versions_file = "docs-site/static/versions.json"
+          is_tag = "${{ steps.deploy-path.outputs.is_tag }}" == "true"
+          version = "${{ steps.deploy-path.outputs.version }}"
+          
+          with open(versions_file, "r") as f:
+            data = json.load(f)
+          
+          if is_tag and version:
+            # Check if version already exists
+            version_exists = any(v["version"] == version for v in data["versions"])
+            
+            if not version_exists:
+              # Add new version to the beginning
+              data["versions"].insert(0, {
+                "version": version,
+                "date": datetime.now().strftime("%Y-%m-%d"),
+                "current": False
+              })
+          else:
+            # For develop, mark all as not current
+            for v in data["versions"]:
+              v["current"] = False
+          
+          with open(versions_file, "w") as f:
+            json.dump(data, f, indent=2)
+          PYTHON_EOF
+
+      - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs-site/build
+          destination_dir: ${{ steps.deploy-path.outputs.path }}
           cname: ${{ secrets.DOCS_CUSTOM_FQDN }}
+
