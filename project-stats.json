@@ -1,16 +1,12 @@
 {
-  "packagesTested": 26,
-  "packagesPassed": 25,
+  "packagesTested": 25,
+  "packagesPassed": 24,
   "packagesFailed": 0,
   "packagesSkipped": 1,
   "coverageReportUrl": "/coverage/index.html",
   "rawTestResultsUrl": "/test-results.json",
-  "generatedAt": "2026-06-20T00:44:23.152501+00:00",
+  "generatedAt": "2026-06-20T01:31:32.054176+00:00",
   "packageCoverages": [
-    {
-      "package": "github.com/spetix/bar-out-adapters/generated/mocks",
-      "coverage": "0.0%"
-    },
     {
       "package": "github.com/spetix/bar-out-adapters/internal/configure",
       "coverage": "100.0%"
