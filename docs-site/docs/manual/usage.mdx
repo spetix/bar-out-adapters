@@ -1,0 +1,78 @@
+---
+sidebar_position: 3
+---
+
+# Usage
+
+This example shows how to create a blocklet adapter and render output for a selected protocol.
+
+```go
+package main
+
+import (
+    "os"
+
+    "github.com/spetix/bar-out-adapters/pkg/barout"
+    "github.com/spetix/bar-out-adapters/pkg/barout/models"
+)
+
+type myData struct{}
+
+func (m *myData) Short() string         { return "OK" }
+func (m *myData) Long() string          { return "All systems operational" }
+func (m *myData) BackgroundColor() string { return "#000000" }
+func (m *myData) ForegroundColor() string { return "#ffffff" }
+func (m *myData) Label() string          { return "status" }
+
+func main() {
+    sb := barout.NewSetupBlocklet(nil)
+    sb.Setup(nil) // initialize flags/environment variables when using cobra command
+
+    output := sb.GetOutput()
+    output.Print(&myData{})
+}
+```
+
+## Configure protocol and options
+
+The package reads `protocol` from either environment variables or CLI flags.
+
+Supported environment variables:
+
+- `protocol` — `raw`, `i3blocks`, `waybar`, `json`
+- `format` — output formatting string
+- `label` — blocklet label
+- `color` — text/foreground color
+- `bgcolor` — background color
+
+When integrated with `cobra`, the `Setup` method registers persistent flags:
+
+- `--protocol`
+- `--format`
+- `--label`
+- `--color`
+- `--bgcolor`
+
+## Example with cobra
+
+```go
+package main
+
+import (
+    "github.com/spf13/cobra"
+    "github.com/spetix/bar-out-adapters/pkg/barout"
+)
+
+func main() {
+    rootCmd := &cobra.Command{Use: "bar-out-adapters"}
+    sb := barout.NewSetupBlocklet(nil)
+    sb.Setup(rootCmd)
+
+    rootCmd.Run = func(cmd *cobra.Command, args []string) {
+        out := sb.GetOutput()
+        out.Print(&myData{})
+    }
+
+    rootCmd.Execute()
+}
+```

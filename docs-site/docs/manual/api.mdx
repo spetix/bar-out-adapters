@@ -1,0 +1,82 @@
+---
+sidebar_position: 4
+---
+
+# API Reference
+
+## `barout.NewSetupBlocklet`
+
+```go
+func NewSetupBlocklet(f models.Formatter) models.SetupBlocklet
+```
+
+Create a new instance of the setup blocklet.
+
+- `f models.Formatter` — optional formatter implementation; pass `nil` to use the default behavior.
+- Returns a `models.SetupBlocklet`.
+
+## `models.SetupBlocklet`
+
+```go
+type SetupBlocklet interface {
+    Setup(*cobra.Command)
+    GetOutput() BlockletOutput
+    Options() RenderOptions
+}
+```
+
+### `Setup(cmd *cobra.Command)`
+
+Initializes CLI flags and environment variables for the blocklet.
+
+### `GetOutput()`
+
+Selects and returns the blocklet output implementation for the configured protocol.
+
+### `Options()`
+
+Returns render options used by the blocklet.
+
+## `models.BlockletOutput`
+
+```go
+type BlockletOutput interface {
+    Print(data Data)
+}
+```
+
+The output implementation writes rendered results to `os.Stdout`.
+
+## `models.RenderOptions`
+
+```go
+type RenderOptions interface {
+    Label() string
+    Format() string
+    ForegroundColor() string
+    BackgroundColor() string
+}
+```
+
+## `models.Data`
+
+```go
+type Data interface {
+    Short() string
+    Long() string
+    BackgroundColor() string
+    ForegroundColor() string
+    Label() string
+}
+```
+
+Implement this interface to provide custom blocklet data.
+
+## Supported output protocols
+
+- `raw`
+- `i3blocks`
+- `waybar`
+- `json`
+
+The protocol selection is handled by `internal/configure/setup.go`.
