@@ -1,11 +1,6 @@
 {
   "versions": [
     {
-      "version": "v0.0.5",
-      "date": "2024-01-15",
-      "current": false
-    },
-    {
       "version": "v1.0.0",
       "date": "2026-06-20",
       "current": false
