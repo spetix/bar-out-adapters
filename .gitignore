@@ -37,3 +37,6 @@ bin/
 lib/
 
 test-results.json
+
+# Coverage output
+target/coverage/

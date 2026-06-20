@@ -1,0 +1,47 @@
+{
+  "packagesTested": 26,
+  "packagesPassed": 25,
+  "packagesFailed": 0,
+  "packagesSkipped": 1,
+  "coverageReportUrl": "/coverage/index.html",
+  "rawTestResultsUrl": "/test-results.json",
+  "generatedAt": "2026-06-19T22:49:02.415152+00:00",
+  "packageCoverages": [
+    {
+      "package": "github.com/spetix/bar-out-adapters/generated/mocks",
+      "coverage": "0.0%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/internal/configure",
+      "coverage": "100.0%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/internal/protocols",
+      "coverage": "93.5%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/internal/configure",
+      "coverage": "100.0%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/internal/render",
+      "coverage": "100.0%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/internal/render",
+      "coverage": "100.0%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/internal/protocols",
+      "coverage": "93.5%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/pkg/barout",
+      "coverage": "100.0%"
+    },
+    {
+      "package": "github.com/spetix/bar-out-adapters/pkg/barout",
+      "coverage": "100.0%"
+    }
+  ]
+}

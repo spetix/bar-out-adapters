@@ -50,10 +50,14 @@ test-results.json:
 
 coverage: test
 	$(MAKE) coverage.xml
+	mkdir -p coverage
+	go tool cover -html=coverage.txt -o coverage/index.html
 
 coverage.xml:
 	gocover-cobertura < coverage.txt > coverage.xml
 
+project-stats: test-results.json
+	python3 scripts/generate-project-stats.py
 
 prepare-site:
 	mkdir -p build/site
@@ -62,17 +66,47 @@ prepare-site:
 	cp code-coverage-results.md build/site
 	cp coverage.xml build/site
 
+inject-coverage:
+	mkdir -p $(DOCS_DIR)/static/coverage
+	if [ -d coverage ]; then \
+		cp -r coverage/* $(DOCS_DIR)/static/coverage/; \
+	else \
+		echo "warning: coverage directory not found, skipping coverage injection"; \
+	fi
 
-docs-dev:
-	cd $(DOCS_DIR) && npm run start
+inject-test-results:
+	cp test-results.json $(DOCS_DIR)/static/test-results.json
+
+docs-setup:
+	npm --prefix $(DOCS_DIR) ci
 
 docs-build:
-	cd $(DOCS_DIR) && npm run build
+	npm --prefix $(DOCS_DIR) run build
+
+docs-prepare: project-stats inject-coverage inject-test-results
+
+docs-site: docs-prepare docs-build
+
+local-site: docs-setup coverage docs-site
+	rm -rf $(DOCS_DIR)/build
+	podman run --rm -v "$(PWD)/$(DOCS_DIR):/site" -w /site node:25 npm install
+	npm --prefix $(DOCS_DIR) run build
+
+run-local-site: local-site
+	npm --prefix $(DOCS_DIR) run serve
+
+run: docs-dev
+
+update-versions:
+	python3 scripts/update-versions.py
+
+docs-dev:
+	npm --prefix $(DOCS_DIR) run start
 
 docs-serve:
-	cd $(DOCS_DIR) && npm run serve
+	npm --prefix $(DOCS_DIR) run serve
 
 docs-clean:
-	cd $(DOCS_DIR) && rm -rf build .docusaurus node_modules
+	rm -rf $(DOCS_DIR)/build $(DOCS_DIR)/.docusaurus $(DOCS_DIR)/node_modules
 
-all: build test coverage
+all: build test coverage project-stats
