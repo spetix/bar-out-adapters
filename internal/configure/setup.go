@@ -3,6 +3,8 @@ package configure
 import (
 	"os"
 
+	"github.com/spetix/bar-out-adapters/internal/events"
+	"github.com/spetix/bar-out-adapters/internal/eventstrategy"
 	"github.com/spetix/bar-out-adapters/internal/protocols"
 	"github.com/spetix/bar-out-adapters/internal/render"
 	"github.com/spetix/bar-out-adapters/pkg/barout/models"
@@ -14,6 +16,7 @@ type SetupBlockletImpl struct {
 	options   *render.RenderOptionsImpl
 	protocol  protocols.BlockletProtocol
 	formatter models.Formatter
+	eventMgr  *events.EventManagerImpl
 }
 
 func NewSetupBlockletImpl(f models.Formatter) *SetupBlockletImpl {
@@ -21,6 +24,7 @@ func NewSetupBlockletImpl(f models.Formatter) *SetupBlockletImpl {
 		options:   render.NewRenderOptionsImpl(),
 		formatter: f,
 		protocol:  protocols.ProtocolRaw,
+		eventMgr:  events.NewEventManagerImpl(),
 	}
 }
 
@@ -65,6 +69,18 @@ func (s *SetupBlockletImpl) GetOutput() models.BlockletOutput {
 	default:
 		return protocols.NewRawOut(os.Stdout)
 	}
+}
+
+func (s *SetupBlockletImpl) EventManager() models.EventManager {
+	switch s.protocol {
+	case protocols.ProtocolRaw, protocols.ProtocolI3Blocks:
+		eventstrategy.NewEnvVarStrategy(s.eventMgr)
+	case protocols.ProtocolWaybar:
+		eventstrategy.NewNopStrategy(s.eventMgr)
+	default:
+		eventstrategy.NewNopStrategy(s.eventMgr)
+	}
+	return s.eventMgr
 }
 
 func (s *SetupBlockletImpl) Options() models.RenderOptions {

@@ -8,6 +8,7 @@ type SetupBlocklet interface {
 	Setup(*cobra.Command)
 	GetOutput() BlockletOutput
 	Options() RenderOptions
+	EventManager() EventManager
 }
 
 type BlockletOutput interface {
