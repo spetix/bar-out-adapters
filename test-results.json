@@ -1,104 +1,115 @@
-{"Time":"2026-06-20T01:31:30.844857889Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/configure"}
-{"Time":"2026-06-20T01:31:30.857066775Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/protocols"}
-{"Time":"2026-06-20T01:31:30.859376298Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence"}
-{"Time":"2026-06-20T01:31:30.859403749Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence","Output":"=== RUN   TestSetup_OptionsFlagEnvPrecedence\n"}
-{"Time":"2026-06-20T01:31:30.859440978Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence","Output":"--- PASS: TestSetup_OptionsFlagEnvPrecedence (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.859448071Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.864365388Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw"}
-{"Time":"2026-06-20T01:31:30.864374956Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw","Output":"=== RUN   TestSetup_InvalidEnvProtocolDefaultsToRaw\n"}
-{"Time":"2026-06-20T01:31:30.86438277Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw","Output":"--- PASS: TestSetup_InvalidEnvProtocolDefaultsToRaw (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.864387209Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.864392138Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection"}
-{"Time":"2026-06-20T01:31:30.864397377Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection","Output":"=== RUN   TestSetup_GetOutputSelection\n"}
-{"Time":"2026-06-20T01:31:30.864402217Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection","Output":"--- PASS: TestSetup_GetOutputSelection (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.864406224Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.8644096Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch"}
-{"Time":"2026-06-20T01:31:30.864412646Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch","Output":"=== RUN   TestSetup_GetOutputDefaultBranch\n"}
-{"Time":"2026-06-20T01:31:30.864417194Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch","Output":"--- PASS: TestSetup_GetOutputDefaultBranch (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.864420781Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.864423887Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Output":"PASS\n"}
-{"Time":"2026-06-20T01:31:30.86443101Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Output":"coverage: 100.0% of statements\n"}
-{"Time":"2026-06-20T01:31:30.87156767Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/render"}
-{"Time":"2026-06-20T01:31:30.87158408Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters"}
-{"Time":"2026-06-20T01:31:30.871590833Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters","Output":"=== RUN   TestRenderOptions_GettersSetters\n"}
-{"Time":"2026-06-20T01:31:30.871600771Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters","Output":"--- PASS: TestRenderOptions_GettersSetters (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.871606291Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.871611261Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Output":"PASS\n"}
-{"Time":"2026-06-20T01:31:30.87161645Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Output":"coverage: 100.0% of statements\n"}
-{"Time":"2026-06-20T01:31:30.871621089Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Output":"ok  \tgithub.com/spetix/bar-out-adapters/internal/render\t(cached)\tcoverage: 100.0% of statements\n"}
-{"Time":"2026-06-20T01:31:30.87162712Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/render","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.871774184Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/pkg/barout"}
-{"Time":"2026-06-20T01:31:30.871994874Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType"}
-{"Time":"2026-06-20T01:31:30.872002879Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType","Output":"=== RUN   TestBlockletProtocol_StringAndType\n"}
-{"Time":"2026-06-20T01:31:30.872198953Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType","Output":"--- PASS: TestBlockletProtocol_StringAndType (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.872249879Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.872259868Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set"}
-{"Time":"2026-06-20T01:31:30.872265368Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set","Output":"=== RUN   TestBlockletProtocol_Set\n"}
-{"Time":"2026-06-20T01:31:30.872429603Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set","Output":"--- PASS: TestBlockletProtocol_Set (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.872588699Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.872596504Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print"}
-{"Time":"2026-06-20T01:31:30.872600902Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print","Output":"=== RUN   TestI3BlocksOut_Print\n"}
-{"Time":"2026-06-20T01:31:30.872992329Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print","Output":"--- PASS: TestI3BlocksOut_Print (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.873021434Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.873026944Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print"}
-{"Time":"2026-06-20T01:31:30.873031392Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print","Output":"=== RUN   TestJsonOut_Print\n"}
-{"Time":"2026-06-20T01:31:30.87353081Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print","Output":"--- PASS: TestJsonOut_Print (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.873601882Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.873622591Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print"}
-{"Time":"2026-06-20T01:31:30.873640124Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print","Output":"=== RUN   TestRawOut_Print\n"}
-{"Time":"2026-06-20T01:31:30.875568188Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print","Output":"--- PASS: TestRawOut_Print (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.87558004Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.875586662Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print"}
-{"Time":"2026-06-20T01:31:30.87559078Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print","Output":"=== RUN   TestWaybarOut_Print\n"}
-{"Time":"2026-06-20T01:31:30.87559659Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print","Output":"--- PASS: TestWaybarOut_Print (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.875600538Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.875604485Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Output":"PASS\n"}
-{"Time":"2026-06-20T01:31:30.876067505Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Output":"coverage: 93.5% of statements\n"}
-{"Time":"2026-06-20T01:31:30.880463538Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet"}
-{"Time":"2026-06-20T01:31:30.880579433Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet","Output":"=== RUN   TestBlockletProtocolSet\n"}
-{"Time":"2026-06-20T01:31:30.880666746Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet","Output":"--- PASS: TestBlockletProtocolSet (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.880754208Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.880794163Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions"}
-{"Time":"2026-06-20T01:31:30.880854916Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions","Output":"=== RUN   TestNewSetupBlocklet_DefaultOptions\n"}
-{"Time":"2026-06-20T01:31:30.881004574Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions","Output":"--- PASS: TestNewSetupBlocklet_DefaultOptions (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.881085885Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.881094942Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection"}
-{"Time":"2026-06-20T01:31:30.881099029Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection\n"}
-{"Time":"2026-06-20T01:31:30.881183957Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json"}
-{"Time":"2026-06-20T01:31:30.881244921Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/json\n"}
-{"Time":"2026-06-20T01:31:30.881330689Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw"}
-{"Time":"2026-06-20T01:31:30.881345035Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/raw\n"}
-{"Time":"2026-06-20T01:31:30.881552712Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks"}
-{"Time":"2026-06-20T01:31:30.881564523Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/i3blocks\n"}
-{"Time":"2026-06-20T01:31:30.881770997Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar"}
-{"Time":"2026-06-20T01:31:30.881784452Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/waybar\n"}
-{"Time":"2026-06-20T01:31:30.881979585Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection","Output":"--- PASS: TestNewSetupBlocklet_GetOutputSelection (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.881994353Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/json (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.882000183Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.882006074Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/raw (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.882011605Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.882015602Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/i3blocks (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.882024749Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.882029267Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/waybar (0.00s)\n"}
-{"Time":"2026-06-20T01:31:30.88203581Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.882039306Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection","Elapsed":0}
-{"Time":"2026-06-20T01:31:30.882049805Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Output":"PASS\n"}
-{"Time":"2026-06-20T01:31:30.883975926Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Output":"coverage: 100.0% of statements\n"}
-{"Time":"2026-06-20T01:31:31.004204375Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/pkg/barout/models"}
-{"Time":"2026-06-20T01:31:31.004360796Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout/models","Output":"?   \tgithub.com/spetix/bar-out-adapters/pkg/barout/models\t[no test files]\n"}
-{"Time":"2026-06-20T01:31:31.004378399Z","Action":"skip","Package":"github.com/spetix/bar-out-adapters/pkg/barout/models","Elapsed":0}
-{"Time":"2026-06-20T01:31:31.004397714Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/tests"}
-{"Time":"2026-06-20T01:31:31.011928315Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok"}
-{"Time":"2026-06-20T01:31:31.011950937Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok","Output":"=== RUN   ExampleNewSetupBlocklet_ok\n"}
-{"Time":"2026-06-20T01:31:31.012846562Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok","Output":"--- PASS: ExampleNewSetupBlocklet_ok (0.00s)\n"}
-{"Time":"2026-06-20T01:31:31.012865557Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok","Elapsed":0}
-{"Time":"2026-06-20T01:31:31.012871508Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Output":"PASS\n"}
-{"Time":"2026-06-20T01:31:31.013644555Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Output":"coverage: [no statements]\n"}
-{"Time":"2026-06-20T01:31:31.861739613Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Output":"ok  \tgithub.com/spetix/bar-out-adapters/internal/configure\t1.015s\tcoverage: 100.0% of statements\n"}
-{"Time":"2026-06-20T01:31:31.862393068Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Elapsed":1.018}
-{"Time":"2026-06-20T01:31:31.877537785Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Output":"ok  \tgithub.com/spetix/bar-out-adapters/internal/protocols\t1.020s\tcoverage: 93.5% of statements\n"}
-{"Time":"2026-06-20T01:31:31.878397693Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Elapsed":1.021}
-{"Time":"2026-06-20T01:31:31.884947991Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Output":"ok  \tgithub.com/spetix/bar-out-adapters/pkg/barout\t1.013s\tcoverage: 100.0% of statements\n"}
-{"Time":"2026-06-20T01:31:31.885490861Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Elapsed":1.014}
-{"Time":"2026-06-20T01:31:32.014899251Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Output":"ok  \tgithub.com/spetix/bar-out-adapters/tests\t1.010s\tcoverage: [no statements]\n"}
-{"Time":"2026-06-20T01:31:32.015526287Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/tests","Elapsed":1.011}
+{"Time":"2026-06-22T23:42:34.002419446Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/configure"}
+{"Time":"2026-06-22T23:42:34.010973955Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence"}
+{"Time":"2026-06-22T23:42:34.011040369Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence","Output":"=== RUN   TestSetup_OptionsFlagEnvPrecedence\n"}
+{"Time":"2026-06-22T23:42:34.011429888Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence","Output":"--- PASS: TestSetup_OptionsFlagEnvPrecedence (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.011726664Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_OptionsFlagEnvPrecedence","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.011746661Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw"}
+{"Time":"2026-06-22T23:42:34.011750799Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw","Output":"=== RUN   TestSetup_InvalidEnvProtocolDefaultsToRaw\n"}
+{"Time":"2026-06-22T23:42:34.011757512Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw","Output":"--- PASS: TestSetup_InvalidEnvProtocolDefaultsToRaw (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.011761419Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_InvalidEnvProtocolDefaultsToRaw","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.011764414Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection"}
+{"Time":"2026-06-22T23:42:34.011769103Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection","Output":"=== RUN   TestSetup_GetOutputSelection\n"}
+{"Time":"2026-06-22T23:42:34.011886593Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection","Output":"--- PASS: TestSetup_GetOutputSelection (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.013146932Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputSelection","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.013157922Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch"}
+{"Time":"2026-06-22T23:42:34.013161719Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch","Output":"=== RUN   TestSetup_GetOutputDefaultBranch\n"}
+{"Time":"2026-06-22T23:42:34.01316739Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch","Output":"--- PASS: TestSetup_GetOutputDefaultBranch (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.013170646Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Test":"TestSetup_GetOutputDefaultBranch","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.013173692Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Output":"PASS\n"}
+{"Time":"2026-06-22T23:42:34.014553875Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Output":"coverage: 81.5% of statements\n"}
+{"Time":"2026-06-22T23:42:34.085665925Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/events"}
+{"Time":"2026-06-22T23:42:34.137716208Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/eventstrategy"}
+{"Time":"2026-06-22T23:42:34.175396273Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/events","Output":"\tgithub.com/spetix/bar-out-adapters/internal/events\t\tcoverage: 0.0% of statements\n"}
+{"Time":"2026-06-22T23:42:34.229228694Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/eventstrategy","Output":"\tgithub.com/spetix/bar-out-adapters/internal/eventstrategy\t\tcoverage: 0.0% of statements\n"}
+{"Time":"2026-06-22T23:42:34.258181291Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/events","Elapsed":0.173}
+{"Time":"2026-06-22T23:42:34.258214904Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/protocols"}
+{"Time":"2026-06-22T23:42:34.268929019Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType"}
+{"Time":"2026-06-22T23:42:34.268985475Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType","Output":"=== RUN   TestBlockletProtocol_StringAndType\n"}
+{"Time":"2026-06-22T23:42:34.268997438Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType","Output":"--- PASS: TestBlockletProtocol_StringAndType (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.269003709Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_StringAndType","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.269009029Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set"}
+{"Time":"2026-06-22T23:42:34.269013488Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set","Output":"=== RUN   TestBlockletProtocol_Set\n"}
+{"Time":"2026-06-22T23:42:34.26902013Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set","Output":"--- PASS: TestBlockletProtocol_Set (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.269025159Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestBlockletProtocol_Set","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.269028446Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print"}
+{"Time":"2026-06-22T23:42:34.269031542Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print","Output":"=== RUN   TestI3BlocksOut_Print\n"}
+{"Time":"2026-06-22T23:42:34.269037252Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print","Output":"--- PASS: TestI3BlocksOut_Print (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.269044235Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestI3BlocksOut_Print","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.269047822Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print"}
+{"Time":"2026-06-22T23:42:34.26905204Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print","Output":"=== RUN   TestJsonOut_Print\n"}
+{"Time":"2026-06-22T23:42:34.26905762Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print","Output":"--- PASS: TestJsonOut_Print (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.270352722Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestJsonOut_Print","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.270364684Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print"}
+{"Time":"2026-06-22T23:42:34.270369463Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print","Output":"=== RUN   TestRawOut_Print\n"}
+{"Time":"2026-06-22T23:42:34.270376176Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print","Output":"--- PASS: TestRawOut_Print (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.270424987Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestRawOut_Print","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.270429385Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print"}
+{"Time":"2026-06-22T23:42:34.270432722Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print","Output":"=== RUN   TestWaybarOut_Print\n"}
+{"Time":"2026-06-22T23:42:34.270679854Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print","Output":"--- PASS: TestWaybarOut_Print (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.270819385Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Test":"TestWaybarOut_Print","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.270853519Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Output":"PASS\n"}
+{"Time":"2026-06-22T23:42:34.273291271Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Output":"coverage: 93.5% of statements\n"}
+{"Time":"2026-06-22T23:42:34.298796494Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/eventstrategy","Elapsed":0.161}
+{"Time":"2026-06-22T23:42:34.298826781Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/internal/render"}
+{"Time":"2026-06-22T23:42:34.305240564Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters"}
+{"Time":"2026-06-22T23:42:34.305258878Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters","Output":"=== RUN   TestRenderOptions_GettersSetters\n"}
+{"Time":"2026-06-22T23:42:34.30548441Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters","Output":"--- PASS: TestRenderOptions_GettersSetters (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.305501672Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/render","Test":"TestRenderOptions_GettersSetters","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.305507233Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Output":"PASS\n"}
+{"Time":"2026-06-22T23:42:34.307250094Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2026-06-22T23:42:34.433718304Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/pkg/barout"}
+{"Time":"2026-06-22T23:42:34.439785907Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet"}
+{"Time":"2026-06-22T23:42:34.439811846Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet","Output":"=== RUN   TestBlockletProtocolSet\n"}
+{"Time":"2026-06-22T23:42:34.439892677Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet","Output":"--- PASS: TestBlockletProtocolSet (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.439974716Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestBlockletProtocolSet","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.439996436Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions"}
+{"Time":"2026-06-22T23:42:34.440001245Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions","Output":"=== RUN   TestNewSetupBlocklet_DefaultOptions\n"}
+{"Time":"2026-06-22T23:42:34.44014789Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions","Output":"--- PASS: TestNewSetupBlocklet_DefaultOptions (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.44019591Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_DefaultOptions","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.440207952Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_EventManager"}
+{"Time":"2026-06-22T23:42:34.44021228Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_EventManager","Output":"=== RUN   TestNewSetupBlocklet_EventManager\n"}
+{"Time":"2026-06-22T23:42:34.440408548Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_EventManager","Output":"    api_test.go:54: Left Button Called\n"}
+{"Time":"2026-06-22T23:42:34.440458702Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_EventManager","Output":"--- PASS: TestNewSetupBlocklet_EventManager (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.440634501Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_EventManager","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.440647826Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection"}
+{"Time":"2026-06-22T23:42:34.440652394Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection\n"}
+{"Time":"2026-06-22T23:42:34.440657213Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json"}
+{"Time":"2026-06-22T23:42:34.44066073Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/json\n"}
+{"Time":"2026-06-22T23:42:34.440730781Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw"}
+{"Time":"2026-06-22T23:42:34.440740199Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/raw\n"}
+{"Time":"2026-06-22T23:42:34.440856136Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks"}
+{"Time":"2026-06-22T23:42:34.440867346Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/i3blocks\n"}
+{"Time":"2026-06-22T23:42:34.44099197Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar"}
+{"Time":"2026-06-22T23:42:34.441004363Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar","Output":"=== RUN   TestNewSetupBlocklet_GetOutputSelection/waybar\n"}
+{"Time":"2026-06-22T23:42:34.441129207Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection","Output":"--- PASS: TestNewSetupBlocklet_GetOutputSelection (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.441142481Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/json (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.441147651Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/json","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.441153973Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/raw (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.441159293Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/raw","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.44116329Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/i3blocks (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.441168209Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/i3blocks","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.441172057Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar","Output":"    --- PASS: TestNewSetupBlocklet_GetOutputSelection/waybar (0.00s)\n"}
+{"Time":"2026-06-22T23:42:34.441178028Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection/waybar","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.441181695Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Test":"TestNewSetupBlocklet_GetOutputSelection","Elapsed":0}
+{"Time":"2026-06-22T23:42:34.441186744Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Output":"PASS\n"}
+{"Time":"2026-06-22T23:42:34.44261643Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2026-06-22T23:42:35.01646853Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/configure","Output":"ok  \tgithub.com/spetix/bar-out-adapters/internal/configure\t1.013s\tcoverage: 81.5% of statements\n"}
+{"Time":"2026-06-22T23:42:35.017304123Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/configure","Elapsed":1.015}
+{"Time":"2026-06-22T23:42:35.018368785Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/pkg/barout/models"}
+{"Time":"2026-06-22T23:42:35.064768809Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout/models","Output":"\tgithub.com/spetix/bar-out-adapters/pkg/barout/models\t\tcoverage: 0.0% of statements\n"}
+{"Time":"2026-06-22T23:42:35.109200357Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout/models","Elapsed":0.091}
+{"Time":"2026-06-22T23:42:35.274895254Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Output":"ok  \tgithub.com/spetix/bar-out-adapters/internal/protocols\t1.016s\tcoverage: 93.5% of statements\n"}
+{"Time":"2026-06-22T23:42:35.275751045Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/protocols","Elapsed":1.018}
+{"Time":"2026-06-22T23:42:35.308811879Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/internal/render","Output":"ok  \tgithub.com/spetix/bar-out-adapters/internal/render\t1.010s\tcoverage: 100.0% of statements\n"}
+{"Time":"2026-06-22T23:42:35.309577101Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/internal/render","Elapsed":1.011}
+{"Time":"2026-06-22T23:42:35.445647092Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Output":"ok  \tgithub.com/spetix/bar-out-adapters/pkg/barout\t1.012s\tcoverage: 100.0% of statements\n"}
+{"Time":"2026-06-22T23:42:35.446470793Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/pkg/barout","Elapsed":1.013}
+{"Time":"2026-06-22T23:42:42.307360557Z","Action":"start","Package":"github.com/spetix/bar-out-adapters/tests"}
+{"Time":"2026-06-22T23:42:42.314921633Z","Action":"run","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok"}
+{"Time":"2026-06-22T23:42:42.314974802Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok","Output":"=== RUN   ExampleNewSetupBlocklet_ok\n"}
+{"Time":"2026-06-22T23:42:42.315680175Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok","Output":"--- PASS: ExampleNewSetupBlocklet_ok (0.00s)\n"}
+{"Time":"2026-06-22T23:42:42.315690595Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/tests","Test":"ExampleNewSetupBlocklet_ok","Elapsed":0}
+{"Time":"2026-06-22T23:42:42.315694472Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Output":"PASS\n"}
+{"Time":"2026-06-22T23:42:42.316939591Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Output":"coverage: [no statements]\n"}
+{"Time":"2026-06-22T23:42:43.318188537Z","Action":"output","Package":"github.com/spetix/bar-out-adapters/tests","Output":"ok  \tgithub.com/spetix/bar-out-adapters/tests\t1.011s\tcoverage: [no statements]\n"}
+{"Time":"2026-06-22T23:42:43.31885869Z","Action":"pass","Package":"github.com/spetix/bar-out-adapters/tests","Elapsed":1.012}
