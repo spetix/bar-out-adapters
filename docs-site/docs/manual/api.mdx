@@ -37,6 +37,10 @@ Selects and returns the blocklet output implementation for the configured protoc
 
 Returns render options used by the blocklet.
 
+### `EventManager()`
+
+Returns an instance of the event manager
+
 ## `models.BlockletOutput`
 
 ```go
@@ -80,3 +84,11 @@ Implement this interface to provide custom blocklet data.
 - `json`
 
 The protocol selection is handled by `internal/configure/setup.go`.
+
+## Event management
+
+It is possible to manage in a centralized way (dependent on protocol chosen) some external events.
+
+`SetupBlocklet` has a commodity method `EventManager()` that returns an instance of the event manager. At 
+that point it's possible to register events or signals to perform additional actions.
+
