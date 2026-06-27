@@ -24,7 +24,6 @@ func NewSetupBlockletImpl(f models.Formatter) *SetupBlockletImpl {
 		options:   render.NewRenderOptionsImpl(),
 		formatter: f,
 		protocol:  protocols.ProtocolRaw,
-		eventMgr:  events.NewEventManagerImpl(),
 	}
 }
 
@@ -74,13 +73,13 @@ func (s *SetupBlockletImpl) GetOutput() models.BlockletOutput {
 func (s *SetupBlockletImpl) EventManager() models.EventManager {
 	switch s.protocol {
 	case protocols.ProtocolRaw, protocols.ProtocolI3Blocks:
-		eventstrategy.NewEnvVarStrategy(s.eventMgr)
+		eventstrategy.NewStrategy(eventstrategy.NewEnvVarStrategy)
 	case protocols.ProtocolWaybar:
-		eventstrategy.NewNopStrategy(s.eventMgr)
+		eventstrategy.NewNopStrategy()
 	default:
-		eventstrategy.NewNopStrategy(s.eventMgr)
+		eventstrategy.NewNopStrategy()
 	}
-	return s.eventMgr
+	return eventstrategy.NewNopStrategy()
 }
 
 func (s *SetupBlockletImpl) Options() models.RenderOptions {

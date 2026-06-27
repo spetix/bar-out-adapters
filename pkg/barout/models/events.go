@@ -1,22 +1,29 @@
 package models
 
+import (
+	"os"
+)
+
 // EventHdlr is a function type that represents an event handler. It takes no arguments and returns an error.
 type EventHdlr func() error
 
 // EventType is a string type that represents the type of an event.
 type EventType string
 
-// type Event interface {
-// 	Name() EventType
-// 	Signal() int
-// }
+type Event interface {
+	Type() EventType
+	Name() string
+	Signal() os.Signal
+	IsSignal() bool
+}
 
 // EventHandlers is a map that associates EventType keys with EventHdlr values. It is used to store event handlers for different event types.
-type EventHandlers map[EventType]EventHdlr
+type EventHandlers map[Event]EventHdlr
 
 // EventStrategy is an interface that defines a strategy for executing events. It has a single method, Execute, which is responsible for executing the event handling logic.
 type EventStrategy interface {
-	Execute()
+	Register(k Event, h EventHdlr)
+	Execute() error
 }
 
 const (
@@ -25,6 +32,7 @@ const (
 	RightButton  EventType = "3"
 	ScrollUp     EventType = "4"
 	ScrollDown   EventType = "5"
+	Signal       EventType = "999"
 )
 
 func (e EventType) String() string {
@@ -46,6 +54,6 @@ func (e EventType) String() string {
 
 // EventManager is an interface that defines methods for managing events. It allows registering event handlers and running the event handling logic.
 type EventManager interface {
-	Register(ev EventType, hdlr EventHdlr)
-	Run()
+	Register(tk Event, hdlr EventHdlr)
+	Run() error
 }

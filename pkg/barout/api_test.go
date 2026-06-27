@@ -50,11 +50,11 @@ func TestNewSetupBlocklet_EventManager(t *testing.T) {
 	if em == nil {
 		t.Fatal("expected non-nil EventManager")
 	}
-	em.Register(models.LeftButton, func() error {
+	em.Register(barout.NewEvent(models.LeftButton), func() error {
 		t.Log("Left Button Called")
 		return nil
 	})
-	em.Register(models.RightButton, func() error {
+	em.Register(barout.NewEvent(models.RightButton), func() error {
 		t.Fail()
 		return fmt.Errorf("Right button not called")
 	})
